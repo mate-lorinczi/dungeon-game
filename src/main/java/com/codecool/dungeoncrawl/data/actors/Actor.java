@@ -28,7 +28,7 @@ public abstract class Actor implements Drawable {
     }
 
     private boolean moveRestriction(Cell nextCell) {
-        Stream<CellType> restrictedTiles = Stream.of(CellType.values());
+        Stream<CellType> restrictedTiles = CellType.getRestrictedCells();
         if(restrictedTiles.anyMatch(e -> e.getTileName().equals(nextCell.getTileName())) || nextCell.getActor() != null) {
             return false;
         }

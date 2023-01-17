@@ -5,12 +5,21 @@ import com.codecool.dungeoncrawl.data.CellType;
 import com.codecool.dungeoncrawl.data.GameMap;
 import com.codecool.dungeoncrawl.data.actors.Player;
 import com.codecool.dungeoncrawl.data.actors.Skeleton;
+import com.codecool.dungeoncrawl.data.items.Key;
 
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class MapLoader {
+
+    private static HashMap<String, Key> createKeys() {
+        HashMap<String, Key> keyMap = new HashMap<>();
+        keyMap.put("Key1", new Key());
+        return keyMap;
+    }
     public static GameMap loadMap() {
+        HashMap<String, Key> keys = createKeys();
         InputStream is = MapLoader.class.getResourceAsStream("/map.txt");
         Scanner scanner = new Scanner(is);
         int width = scanner.nextInt();
@@ -41,6 +50,12 @@ public class MapLoader {
                         case '@':
                             cell.setType(CellType.FLOOR);
                             map.setPlayer(new Player(cell));
+                            break;
+                        case 'k':
+                            cell.setType(CellType.FLOOR);
+                            Key key = keys.get("Key1");
+                            key.setCell(cell);
+                            cell.setItem(key);
                             break;
                         default:
                             throw new RuntimeException("Unrecognized character: '" + line.charAt(x) + "'");

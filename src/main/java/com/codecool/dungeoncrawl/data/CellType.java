@@ -1,5 +1,8 @@
 package com.codecool.dungeoncrawl.data;
 
+import java.util.List;
+import java.util.stream.Stream;
+
 public enum CellType {
     EMPTY("empty"),
     FLOOR("floor"),
@@ -13,5 +16,9 @@ public enum CellType {
 
     public String getTileName() {
         return tileName;
+    }
+
+    public static Stream<CellType> getRestrictedCells() {
+        return Stream.of(CellType.EMPTY, CellType.WALL);
     }
 }
