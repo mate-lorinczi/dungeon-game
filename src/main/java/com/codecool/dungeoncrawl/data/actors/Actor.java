@@ -1,7 +1,12 @@
 package com.codecool.dungeoncrawl.data.actors;
 
 import com.codecool.dungeoncrawl.data.Cell;
+import com.codecool.dungeoncrawl.data.CellType;
 import com.codecool.dungeoncrawl.data.Drawable;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
 
 public abstract class Actor implements Drawable {
     private Cell cell;
@@ -13,10 +18,21 @@ public abstract class Actor implements Drawable {
     }
 
     public void move(int dx, int dy) {
+
         Cell nextCell = cell.getNeighbor(dx, dy);
-        cell.setActor(null);
-        nextCell.setActor(this);
-        cell = nextCell;
+        if(moveRestriction(nextCell)) {
+            cell.setActor(null);
+            nextCell.setActor(this);
+            cell = nextCell;
+        }
+    }
+
+    private boolean moveRestriction(Cell nextCell) {
+        Stream<CellType> restrictedTiles = Stream.of(CellType.values());
+        if(restrictedTiles.anyMatch(e -> e.getTileName().equals(nextCell.getTileName())) || nextCell.getActor() != null) {
+            return false;
+        }
+        return true;
     }
 
     public int getHealth() {
