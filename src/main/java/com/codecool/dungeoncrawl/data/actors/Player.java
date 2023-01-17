@@ -29,4 +29,8 @@ public class Player extends Actor {
             nextCell.getItem().pickUp(this);
         }
     }
+
+    public boolean checkInventory(Item item) {
+        return inventory.contains(item);
+    }
 }

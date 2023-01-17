@@ -6,7 +6,8 @@ import java.util.stream.Stream;
 public enum CellType {
     EMPTY("empty"),
     FLOOR("floor"),
-    WALL("wall");
+    WALL("wall"),
+    DOOR("closed door");
 
     private final String tileName;
 
@@ -19,6 +20,6 @@ public enum CellType {
     }
 
     public static Stream<CellType> getRestrictedCells() {
-        return Stream.of(CellType.EMPTY, CellType.WALL);
+        return Stream.of(CellType.EMPTY, CellType.WALL, CellType.DOOR);
     }
 }
