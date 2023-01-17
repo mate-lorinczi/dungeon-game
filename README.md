@@ -40,6 +40,10 @@ the important bit is that it should be fun.
     - The hero is not able to move into walls.
     - The hero is not able to move into monsters.
 
+
+TODO:
+  - A restrictions általánosabbá tenni.
+
 3. Dungeon items\
 There are items lying around the dungeon. They are visible in the GUI. 
    - There are at least two item types, such as a key and a sword.
@@ -47,15 +51,26 @@ There are items lying around the dungeon. They are visible in the GUI.
    - A player can stand on the same square as an item.
    - The item must be displayed on screen (unless somebody stands on the same square).
 
+Todo:
+- Implement Item as a class or enum, with buff field or stat.
+
 4. Pick up items\
 Create a feature that allows the hero to pick up an item.
    - There is a way to pick up items.
    - After the player picks up the item, the item the hero is standing on is gone from map.
 
+TODO:
+- Pick up method on player, that detects if player goes on an cell contaning an item. 
+- Item has a pick up method aswell that sets some field on the player, and adds itself to the player inventory.
+- Add item to inventory.
+
 5. Show picked up items\
    Show picked up items in the inventory list.
    - There is an `Inventory` list on the screen.
    - After the hero picks up an item, it appears in the inventory.
+
+TODO:
+- Add inventory to the StatusPane class
 
 6. Attack monsters\
    Make the hero able to attack monsters by moving into them.
@@ -64,16 +79,32 @@ Create a feature that allows the hero to pick up an item.
    - Having a weapon increases attack strength.
    - Different monsters have different health and attack strengths.
 
+TODO:
+- The move detects if the player walks into a monser, and calls an attack methid OR attack a monster with a designated key.
+- Attack method modfiy the healt of the monster, and the player aswell.
+- Attack method is inherited from the Actor class as an interface or abstract method.
+- Actor has an attack strength field
+- What happens when the player changes weapons???
+
 7. Doors and keys\
    Create doors in the dungeon that are opened using keys.
    - There are two new square types, closed door and open door.
    - The hero cannot pass through a closed door unless there is a key in the inventory. After moving through, the closed door becomes an open door.
+
+TODO:
+- Implement Keys as an Item class.
+- Implement doors as a separate class???
+- Player has a method, that checks if the player has a certain key.
+- If the player has the key, the door becomes passable.
 
 8. Different monsters\
    Create three different monster types with different behaviors.
     - There are at least three different monster types with different behaviors.
     - One type of monster does not move at all.
     - One type of monster moves randomly. It cannot go trough walls or open doors.
+
+TODO:
+- Movement is implemented in a strategy pattern (Move interface, with different movement class implementations).
 
 9. **OPTIONAL TASK:** Better movement AI\
    Create a more sophisticated movement AI.
