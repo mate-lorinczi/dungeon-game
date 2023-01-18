@@ -43,11 +43,32 @@ public class MapLoader {
                         case '#':
                             cell.setType(CellType.WALL);
                             break;
+                        case 'f':
+                            cell.setType(CellType.TORCH);
+                            break;
+                        case 'e':
+                            cell.setType(CellType.CANDLE);
+                            break;
+                        case 'o':
+                            cell.setType(CellType.GRAVESTONE);
+                            break;
+                        case 'v':
+                            cell.setType(CellType.BONES);
+                            break;
+                        case 'l':
+                            cell.setType(CellType.STAIR);
+                            break;
+                        case 'w':
+                            cell.setType(CellType.BASEMENT);
+                            break;
+                        case 'r':
+                            cell.setType(CellType.FIRE);
+                            break;
                         case 't':
                             cell.setType(CellType.TREE);
                             break;
                         case 'i':
-                            cell.setType(CellType.FLOOR);
+                            cell.setType(CellType.GRASS);
                             new Sword(cell);
                             break;
                         case '.':
@@ -70,11 +91,11 @@ public class MapLoader {
                             new Skeleton(cell);
                             break;
                         case '@':
-                            cell.setType(CellType.FLOOR);
+                            cell.setType(CellType.GRASS);
                             map.setPlayer(new Player(cell));
                             break;
                         case 'k':
-                            cell.setType(CellType.FLOOR);
+                            cell.setType(CellType.GRASS);
                             Key key = keys.get("Key1");
                             key.setCell(cell);
                             cell.setItem(key);
