@@ -46,9 +46,6 @@ public class MapLoader {
                             cell.setType(CellType.FLOOR);
                             new Sword(cell);
                             break;
-                        case 'k':
-                            cell.setType(CellType.KEY);
-                            break;
                         case '.':
                             cell.setType(CellType.FLOOR);
                             break;

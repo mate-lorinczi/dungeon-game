@@ -6,6 +6,10 @@ public abstract class Item implements Drawable {
 
     private Cell cell;
 
+    public Item() {
+        this.cell = null;
+    }
+
     public Item(Cell cell) {
         this.cell = cell;
         this.cell.setItem(this);
@@ -14,5 +18,9 @@ public abstract class Item implements Drawable {
     abstract public void itemAction(Player player);
     public Cell getCell() {
         return cell;
+    }
+
+    public void setCell(Cell cell) {
+        this.cell = cell;
     }
 }

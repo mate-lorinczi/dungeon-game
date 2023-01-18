@@ -2,6 +2,7 @@ package com.codecool.dungeoncrawl.data.doors;
 
 import com.codecool.dungeoncrawl.data.Cell;
 import com.codecool.dungeoncrawl.data.CellType;
+import com.codecool.dungeoncrawl.data.Item;
 import com.codecool.dungeoncrawl.data.actors.Player;
 import com.codecool.dungeoncrawl.data.items.Key;
 
@@ -21,7 +22,7 @@ public class ClosedDoor extends Item {
 
     @Override
     public void itemAction(Player player) {
-        if(player.checkInventory(key)) {
+        if(player.checkInventory(this.key)) {
             Cell cell = super.getCell();
             cell.setType(CellType.FLOOR);
             cell.setItem(null);
