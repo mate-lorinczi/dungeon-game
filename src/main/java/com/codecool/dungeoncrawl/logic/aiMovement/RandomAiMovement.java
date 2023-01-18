@@ -15,9 +15,6 @@ public class RandomAiMovement implements MovementType{
         int x = random.nextInt(2 + 1) - 1;
         int y = random.nextInt(2 + 1) - 1;
 
-        System.out.println(x);
-        System.out.println(y);
-
         monster.move(x, y);
     }
 }
