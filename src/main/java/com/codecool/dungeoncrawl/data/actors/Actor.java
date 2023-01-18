@@ -11,9 +11,7 @@ import java.util.stream.Stream;
 public abstract class Actor implements Drawable {
     private Cell cell;
     private int health = 10;
-
-
-    private int strength;
+    private int strength = 1;
 
     public Actor(Cell cell) {
         this.cell = cell;
@@ -28,6 +26,11 @@ public abstract class Actor implements Drawable {
             nextCell.setActor(this);
             cell = nextCell;
         }
+    }
+
+    public void damage(int dmg){
+        setHealth(getHealth()-dmg);
+        System.out.println(getHealth());
     }
 
     private boolean moveRestriction(Cell nextCell) {
@@ -59,5 +62,6 @@ public abstract class Actor implements Drawable {
     public void setStrength(int strength) {
         this.strength = strength;
     }
+    public void setHealth(int health) { this.health = health; }
 
 }
