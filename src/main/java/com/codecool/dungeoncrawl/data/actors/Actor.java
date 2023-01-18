@@ -3,6 +3,7 @@ package com.codecool.dungeoncrawl.data.actors;
 import com.codecool.dungeoncrawl.data.Cell;
 import com.codecool.dungeoncrawl.data.CellType;
 import com.codecool.dungeoncrawl.data.Drawable;
+import com.codecool.dungeoncrawl.data.MovementTypes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,15 +13,26 @@ public abstract class Actor implements Drawable {
     private Cell cell;
     private int health = 10;
 
+    private MovementTypes movementType;
+
 
     private int strength;
 
     public Actor(Cell cell) {
         this.cell = cell;
         this.cell.setActor(this);
+        this.movementType = MovementTypes.Player;
+    }
+
+    public Actor(Cell cell, int health, MovementTypes movementType, int strength) {
+        this.cell = cell;
+        this.health = health;
+        this.movementType = movementType;
+        this.strength = strength;
     }
 
     public void move(int dx, int dy) {
+
 
         Cell nextCell = cell.getNeighbor(dx, dy);
         if(moveRestriction(nextCell)) {
@@ -60,4 +72,12 @@ public abstract class Actor implements Drawable {
         this.strength = strength;
     }
 
+    public void setMovementType(MovementTypes movementType) {
+        this.movementType = movementType;
+    }
+
+
+    public MovementTypes getMovementType() {
+        return movementType;
+    }
 }
