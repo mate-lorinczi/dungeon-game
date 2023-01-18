@@ -31,4 +31,8 @@ public class Player extends Actor {
         super.move(dx, dy);
     }
 
+    public boolean checkInventory(Item item) {
+        return items.contains(item);
+    }
+
 }

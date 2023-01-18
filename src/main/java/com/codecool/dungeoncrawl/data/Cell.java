@@ -5,6 +5,7 @@ import com.codecool.dungeoncrawl.data.actors.Actor;
 public class Cell implements Drawable {
     private CellType type;
     private Actor actor;
+    private Item item;
     private GameMap gameMap;
     private int x, y;
 
@@ -32,6 +33,14 @@ public class Cell implements Drawable {
 
     public void setActor(Actor actor) {
         this.actor = actor;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
+
+    public Item getItem() {
+        return item;
     }
 
     public Actor getActor() {
