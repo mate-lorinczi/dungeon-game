@@ -1,7 +1,7 @@
 package com.codecool.dungeoncrawl.data.actors;
 
 import com.codecool.dungeoncrawl.data.Cell;
-import com.codecool.dungeoncrawl.data.Item;
+import com.codecool.dungeoncrawl.data.items.Item;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,5 +34,7 @@ public class Player extends Actor {
     public boolean checkInventory(Item item) {
         return items.contains(item);
     }
-
+    public List<Item> getItems() {
+        return items;
+    }
 }
