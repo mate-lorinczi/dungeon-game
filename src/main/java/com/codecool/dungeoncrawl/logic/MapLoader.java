@@ -52,8 +52,14 @@ public class MapLoader {
                         case 'o':
                             cell.setType(CellType.GRAVESTONE);
                             break;
+                        case 'x':
+                            cell.setType(CellType.TOWER);
+                            break;
                         case 'v':
                             cell.setType(CellType.BONES);
+                            break;
+                        case 'm':
+                            cell.setType(CellType.LADDER);
                             break;
                         case 'l':
                             cell.setType(CellType.STAIR);

@@ -20,6 +20,8 @@ public enum CellType {
     CANDLE("candle"),
     GRAVESTONE("grave"),
     BONES("bones"),
+    LADDER("ladder"),
+    TOWER("tower"),
     DOOR("closed door");
 
     private final String tileName;
@@ -33,6 +35,6 @@ public enum CellType {
     }
 
     public static Stream<CellType> getRestrictedCells() {
-        return Stream.of(CellType.EMPTY,CellType.BASEMENT, CellType.BONES, CellType.GRAVESTONE, CellType.CANDLE, CellType.FIRE, CellType.WALL, CellType.TORCH, CellType.CARABINER, CellType.CHAIN, CellType.DOOR, CellType.TREE);
+        return Stream.of(CellType.EMPTY,CellType.BASEMENT,  CellType.TOWER, CellType.BONES, CellType.GRAVESTONE, CellType.CANDLE, CellType.FIRE, CellType.WALL, CellType.TORCH, CellType.CARABINER, CellType.CHAIN, CellType.DOOR, CellType.TREE);
     }
 }

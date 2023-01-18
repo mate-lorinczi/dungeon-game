@@ -9,13 +9,13 @@
 #ff.......ff#   #w......w
 ####abba####     we....ew
     cbbc         www.wwww
-    cbbc           #.#
-    cbbc         ###.####
- tttcbbcttt      #......#
- tggg@ggggt      #......#
- tggggggigt      #......#
- tggttttggt      #......#
- tggttttggt      #......#
- tgvggggggt      #......#
- tgggggggkt      #......#
- tttttttttt      ########
+    cbbc           xmx
+    cbbc           xmx
+ tttcbbcttt        xmx
+ tggg@ggggt      xxxmxxx
+ tggggggigt      x.....x
+ tggttttggt      x.....x
+ tggttttggt      x.....x
+ tgvggggggt      x.....x
+ tgggggggkt      xxxxxxx
+ tttttttttt
