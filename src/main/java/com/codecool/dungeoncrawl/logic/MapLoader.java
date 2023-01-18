@@ -20,6 +20,7 @@ public class MapLoader {
         keyMap.put("Key1", new Key());
         return keyMap;
     }
+
     public static GameMap loadMap() {
         HashMap<String, Key> keys = createKeys();
         InputStream is = MapLoader.class.getResourceAsStream("/map.txt");
@@ -42,12 +43,27 @@ public class MapLoader {
                         case '#':
                             cell.setType(CellType.WALL);
                             break;
+                        case 't':
+                            cell.setType(CellType.TREE);
+                            break;
                         case 'i':
                             cell.setType(CellType.FLOOR);
                             new Sword(cell);
                             break;
                         case '.':
                             cell.setType(CellType.FLOOR);
+                            break;
+                        case 'g':
+                            cell.setType(CellType.GRASS);
+                            break;
+                        case 'b':
+                            cell.setType(CellType.BRIDGE);
+                            break;
+                        case 'c':
+                            cell.setType(CellType.CHAIN);
+                            break;
+                        case 'a':
+                            cell.setType(CellType.CARABINER);
                             break;
                         case 's':
                             cell.setType(CellType.FLOOR);

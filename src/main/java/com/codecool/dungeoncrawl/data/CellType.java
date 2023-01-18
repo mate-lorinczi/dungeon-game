@@ -7,6 +7,11 @@ public enum CellType {
     EMPTY("empty"),
     FLOOR("floor"),
     WALL("wall"),
+    TREE("tree"),
+    CHAIN("chain"),
+    CARABINER("carabiner"),
+    BRIDGE("bridge"),
+    GRASS("grass"),
     SKELETON("skeleton"),
     DOOR("closed door");
 
@@ -21,6 +26,6 @@ public enum CellType {
     }
 
     public static Stream<CellType> getRestrictedCells() {
-        return Stream.of(CellType.EMPTY, CellType.WALL, CellType.DOOR);
+        return Stream.of(CellType.EMPTY, CellType.WALL, CellType.CARABINER, CellType.CHAIN, CellType.DOOR, CellType.TREE);
     }
 }
