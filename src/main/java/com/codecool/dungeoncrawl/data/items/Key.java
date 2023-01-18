@@ -13,9 +13,9 @@ public class Key extends Item{
     }
 
     @Override
-    public void pickUp(Player player) {
-        player.addToInventory(this);
-        super.getCell().setItem(null);
+    public void itemAction(Player player) {
+        player.addItemsToInventory(this);
+        this.getCell().setItem(null);
     }
 
     @Override

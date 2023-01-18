@@ -1,13 +1,12 @@
 package com.codecool.dungeoncrawl.data.actors;
 
 import com.codecool.dungeoncrawl.data.Cell;
-import com.codecool.dungeoncrawl.data.items.Item;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Player extends Actor {
-    List<Item> inventory;
+    List<Item> items;
     public Player(Cell cell) {
         super(cell);
         this.inventory = new ArrayList<>();
@@ -17,20 +16,21 @@ public class Player extends Actor {
         return "player";
     }
 
-    public void addToInventory(Item item) {
-        inventory.add(item);
-    }
-
     @Override
     public void move(int dx, int dy) {
-        super.move(dx, dy);
         Cell nextCell = super.getCell().getNeighbor(dx, dy);
         if(nextCell.getItem() != null) {
-            nextCell.getItem().pickUp(this);
+            nextCell.getItem().itemAction(this);
         }
+
+        super.move(dx, dy);
     }
 
     public boolean checkInventory(Item item) {
         return inventory.contains(item);
+    }
+
+    public void addItemsToInventory(Item item) {
+        items.add(item);
     }
 }

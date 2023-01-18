@@ -3,7 +3,6 @@ package com.codecool.dungeoncrawl.data.doors;
 import com.codecool.dungeoncrawl.data.Cell;
 import com.codecool.dungeoncrawl.data.CellType;
 import com.codecool.dungeoncrawl.data.actors.Player;
-import com.codecool.dungeoncrawl.data.items.Item;
 import com.codecool.dungeoncrawl.data.items.Key;
 
 public class ClosedDoor extends Item {
@@ -21,7 +20,7 @@ public class ClosedDoor extends Item {
     }
 
     @Override
-    public void pickUp(Player player) {
+    public void itemAction(Player player) {
         if(player.checkInventory(key)) {
             Cell cell = super.getCell();
             cell.setType(CellType.FLOOR);

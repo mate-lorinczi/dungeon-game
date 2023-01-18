@@ -1,7 +1,6 @@
 package com.codecool.dungeoncrawl.data;
 
 import com.codecool.dungeoncrawl.data.actors.Actor;
-import com.codecool.dungeoncrawl.data.items.Item;
 
 public class Cell implements Drawable {
     private CellType type;

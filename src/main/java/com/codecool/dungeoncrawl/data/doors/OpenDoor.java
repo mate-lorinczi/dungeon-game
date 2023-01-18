@@ -2,7 +2,6 @@ package com.codecool.dungeoncrawl.data.doors;
 
 import com.codecool.dungeoncrawl.data.Cell;
 import com.codecool.dungeoncrawl.data.actors.Player;
-import com.codecool.dungeoncrawl.data.items.Item;
 
 public class OpenDoor extends Item {
 
@@ -17,5 +16,5 @@ public class OpenDoor extends Item {
     }
 
     @Override
-    public void pickUp(Player player) {}
+    public void itemAction(Player player) {}
 }
