@@ -28,6 +28,10 @@ public class Player extends Actor {
         if (nextCell.getItem() != null) {
             nextCell.getItem().itemAction(this);
         }
+        else if(nextCell.getActor() != null){
+            super.setHealth(super.getHealth()-nextCell.getActor().getStrength());
+            nextCell.getActor().damage(getStrength());
+        }
         super.move(dx, dy);
     }
 
