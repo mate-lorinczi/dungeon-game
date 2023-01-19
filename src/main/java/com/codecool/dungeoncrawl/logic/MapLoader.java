@@ -3,6 +3,8 @@ package com.codecool.dungeoncrawl.logic;
 import com.codecool.dungeoncrawl.data.Cell;
 import com.codecool.dungeoncrawl.data.CellType;
 import com.codecool.dungeoncrawl.data.GameMap;
+import com.codecool.dungeoncrawl.data.actors.ToiletMonster;
+import com.codecool.dungeoncrawl.data.doors.SecretDoor;
 import com.codecool.dungeoncrawl.data.items.Sword;
 import com.codecool.dungeoncrawl.data.*;
 import com.codecool.dungeoncrawl.data.actors.Player;
@@ -20,7 +22,7 @@ import java.util.Scanner;
 
 public class MapLoader {
 
-    private static List<String> maps = List.of("/map.txt", "/level2.txt");
+    private static List<String> maps = List.of("/map.txt", "/level2.txt", "/secretLevel.txt");
     private static Player player = new Player();
 
     private static HashMap<String, Key> createKeys() {
@@ -133,6 +135,13 @@ public class MapLoader {
                             cell.setType(CellType.STAIRS);
                             cell.setItem(new ClosedStairs(cell, keys.get("key2"),
                                    level - 1));
+                            break;
+                        case 'Ő':
+                            cell.setType(CellType.FLOOR);
+                            new ToiletMonster(cell, MovementTypes.Stupid, 30);
+                            break;
+                        case 'S':
+                            new SecretDoor(cell, null, 2);
                             break;
                         case '2':
                             cell.setType(CellType.FLOOR);

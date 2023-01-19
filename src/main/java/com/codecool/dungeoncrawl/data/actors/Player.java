@@ -38,7 +38,6 @@ public class Player extends Actor {
         }
         super.move(dx, dy);
 
-        items.forEach(System.out::println);
     }
 
     public boolean checkInventory(Item item) {

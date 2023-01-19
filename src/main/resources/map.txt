@@ -16,6 +16,6 @@
  tggggggigt      xf...fx
  tggttttggt      x.O...x
  tggttttggt      x.....x
- tgvggggggt      xf.2.fx
- tqggggggkt      xxxxxxx
+ tgvggggggt      xf...fx
+ tqggg2ggkt      xxxxxxx
  tttttttttt
