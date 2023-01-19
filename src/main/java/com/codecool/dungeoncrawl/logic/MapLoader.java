@@ -21,6 +21,7 @@ public class MapLoader {
         keyMap.put("Key1", new Key());
         return keyMap;
     }
+
     public static GameMap loadMap() {
         HashMap<String, Key> keys = createKeys();
         InputStream is = MapLoader.class.getResourceAsStream("/map.txt");
@@ -43,23 +44,65 @@ public class MapLoader {
                         case '#':
                             cell.setType(CellType.WALL);
                             break;
+                        case 'f':
+                            cell.setType(CellType.TORCH);
+                            break;
+                        case 'e':
+                            cell.setType(CellType.CANDLE);
+                            break;
+                        case 'o':
+                            cell.setType(CellType.GRAVESTONE);
+                            break;
+                        case 'x':
+                            cell.setType(CellType.TOWER);
+                            break;
+                        case 'v':
+                            cell.setType(CellType.BONES);
+                            break;
+                        case 'm':
+                            cell.setType(CellType.LADDER);
+                            break;
+                        case 'l':
+                            cell.setType(CellType.STAIR);
+                            break;
+                        case 'w':
+                            cell.setType(CellType.BASEMENT);
+                            break;
+                        case 'r':
+                            cell.setType(CellType.FIRE);
+                            break;
+                        case 't':
+                            cell.setType(CellType.TREE);
+                            break;
                         case 'i':
-                            cell.setType(CellType.FLOOR);
+                            cell.setType(CellType.GRASS);
                             new Sword(cell);
                             break;
                         case '.':
                             cell.setType(CellType.FLOOR);
+                            break;
+                        case 'g':
+                            cell.setType(CellType.GRASS);
+                            break;
+                        case 'b':
+                            cell.setType(CellType.BRIDGE);
+                            break;
+                        case 'c':
+                            cell.setType(CellType.CHAIN);
+                            break;
+                        case 'a':
+                            cell.setType(CellType.CARABINER);
                             break;
                         case 's':
                             cell.setType(CellType.FLOOR);
                             new Skeleton(cell, MovementTypes.Random);
                             break;
                         case '@':
-                            cell.setType(CellType.FLOOR);
+                            cell.setType(CellType.GRASS);
                             map.setPlayer(new Player(cell));
                             break;
                         case 'k':
-                            cell.setType(CellType.FLOOR);
+                            cell.setType(CellType.GRASS);
                             Key key = keys.get("Key1");
                             key.setCell(cell);
                             cell.setItem(key);
