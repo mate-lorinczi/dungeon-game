@@ -16,6 +16,6 @@ public class StupidAiMovement implements MovementType{
 
     @Override
     public void calculateMovement(Monster monster, GameMap map) {
-        monster.move(monster.getX(), monster.getY());
+        monster.move(0, 0);
     }
 }
