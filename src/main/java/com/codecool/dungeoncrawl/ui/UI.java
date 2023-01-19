@@ -1,6 +1,8 @@
 package com.codecool.dungeoncrawl.ui;
 
 import com.codecool.dungeoncrawl.data.Cell;
+import com.codecool.dungeoncrawl.data.actors.Player;
+import com.codecool.dungeoncrawl.data.items.Item;
 import com.codecool.dungeoncrawl.logic.GameLogic;
 import com.codecool.dungeoncrawl.ui.elements.MainStage;
 import com.codecool.dungeoncrawl.ui.keyeventhandler.KeyHandler;
@@ -11,6 +13,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.util.List;
 import java.util.Set;
 
 public class UI {
@@ -44,6 +47,7 @@ public class UI {
         for (KeyHandler keyHandler : keyHandlers) {
             keyHandler.perform(keyEvent, logic.getMap());
         }
+        logic.update();
         refresh();
     }
 
@@ -55,6 +59,12 @@ public class UI {
                 Cell cell = logic.getCell(x, y);
                 if (cell.getActor() != null) {
                     Tiles.drawTile(context, cell.getActor(), x, y);
+                    if (logic.getCell(x, y).getActor() instanceof Player) {
+                        Player playerItems = (Player) (logic.getCell(x, y).getActor());
+                        List<Item> itemList = playerItems.getItems();
+                            mainStage.setInventoryContent(itemList);
+
+                    }
                 } else if (cell.getItem() != null) {
                     Tiles.drawTile(context, cell.getItem(), x, y);
                 } else {

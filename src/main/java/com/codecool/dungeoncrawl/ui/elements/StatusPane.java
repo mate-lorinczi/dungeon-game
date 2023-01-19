@@ -1,9 +1,12 @@
 package com.codecool.dungeoncrawl.ui.elements;
 
+import com.codecool.dungeoncrawl.data.items.Item;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+
+import java.util.List;
 
 public class StatusPane {
     public static final int RIGHT_PANEL_WIDTH = 200;
@@ -42,5 +45,7 @@ public class StatusPane {
     public void setHealthValue(String text) {
         healthValueLabel.setText(text);
     }
-    public void setInventoryContent(String text){ inventoryContent.setText(text); }
+    public void setInventoryContent(List<Item> itemList){ inventoryContent.setText(
+            String.join("\n",
+                    itemList.stream().map(item -> item.getTileName()).toList())); }
 }
