@@ -1,10 +1,11 @@
 package com.codecool.dungeoncrawl.data.actors;
 
 import com.codecool.dungeoncrawl.data.Cell;
+import com.codecool.dungeoncrawl.data.MovementTypes;
 
-public class Skeleton extends Actor {
-    public Skeleton(Cell cell) {
-        super(cell);
+public class Skeleton extends Monster {
+    public Skeleton(Cell cell, MovementTypes movementType) {
+        super(cell, movementType);
     }
 
 
@@ -12,4 +13,5 @@ public class Skeleton extends Actor {
     public String getTileName() {
         return "skeleton";
     }
+
 }

@@ -2,6 +2,7 @@ package com.codecool.dungeoncrawl.data.actors;
 
 import com.codecool.dungeoncrawl.data.Cell;
 import com.codecool.dungeoncrawl.data.items.Item;
+import com.codecool.dungeoncrawl.data.MovementTypes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +28,8 @@ public class Player extends Actor {
         Cell nextCell = super.getCell().getNeighbor(dx, dy);
         if (nextCell.getItem() != null) {
             nextCell.getItem().itemAction(this);
-        }
-        else if(nextCell.getActor() != null){
+        } else if(nextCell.getActor() != null) {
+            nextCell.getActor().setMovementType(MovementTypes.Stupid);
             super.setHealth(super.getHealth()-nextCell.getActor().getStrength());
             nextCell.getActor().damage(getStrength());
         }
