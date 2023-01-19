@@ -6,6 +6,7 @@ import com.codecool.dungeoncrawl.data.GameMap;
 import com.codecool.dungeoncrawl.data.Sword;
 import com.codecool.dungeoncrawl.data.actors.Player;
 import com.codecool.dungeoncrawl.data.actors.Skeleton;
+import com.codecool.dungeoncrawl.data.actors.Ogre;
 import com.codecool.dungeoncrawl.data.doors.ClosedDoor;
 import com.codecool.dungeoncrawl.data.items.Key;
 
@@ -52,6 +53,10 @@ public class MapLoader {
                         case 's':
                             cell.setType(CellType.FLOOR);
                             new Skeleton(cell);
+                            break;
+                        case 'o':
+                            cell.setType(CellType.FLOOR);
+                            new Ogre(cell);
                             break;
                         case '@':
                             cell.setType(CellType.FLOOR);

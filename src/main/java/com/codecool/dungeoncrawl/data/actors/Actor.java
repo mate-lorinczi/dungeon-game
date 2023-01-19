@@ -31,6 +31,9 @@ public abstract class Actor implements Drawable {
     public void damage(int dmg){
         setHealth(getHealth()-dmg);
         System.out.println(getHealth());
+        if(getHealth()<=0){
+            cell.setActor(null);
+        }
     }
 
     private boolean moveRestriction(Cell nextCell) {
