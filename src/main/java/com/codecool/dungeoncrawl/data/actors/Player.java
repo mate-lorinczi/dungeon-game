@@ -15,6 +15,9 @@ public class Player extends Actor {
         super(cell);
     }
 
+    public Player(){
+    }
+
     public String getTileName() {
         return "player";
     }

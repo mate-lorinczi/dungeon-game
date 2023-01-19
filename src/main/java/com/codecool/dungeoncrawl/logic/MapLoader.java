@@ -21,6 +21,7 @@ import java.util.Scanner;
 public class MapLoader {
 
     private static List<String> maps = List.of("/map.txt", "/level2.txt");
+    private static Player player = new Player();
 
     private static HashMap<String, Key> createKeys() {
         HashMap<String, Key> keyMap = new HashMap<>();
@@ -110,7 +111,9 @@ public class MapLoader {
                             break;
                         case '@':
                             cell.setType(CellType.GRASS);
-                            map.setPlayer(new Player(cell));
+                            player.setCell(cell);
+                            cell.setActor(player);
+                            map.setPlayer(player);
                             break;
                         case 'k':
                             cell.setType(CellType.GRASS);

@@ -22,6 +22,8 @@ public abstract class Actor implements Drawable {
         this.movementType = MovementTypes.Player;
     }
 
+    public Actor(){}
+
     public Actor(Cell cell, int health, MovementTypes movementType, int strength) {
         this.cell = cell;
         this.health = health;
@@ -85,5 +87,9 @@ public abstract class Actor implements Drawable {
 
     public MovementTypes getMovementType() {
         return movementType;
+    }
+
+    public void setCell(Cell cell) {
+        this.cell = cell;
     }
 }
