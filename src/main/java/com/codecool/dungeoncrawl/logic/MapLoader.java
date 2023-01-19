@@ -3,6 +3,8 @@ package com.codecool.dungeoncrawl.logic;
 import com.codecool.dungeoncrawl.data.Cell;
 import com.codecool.dungeoncrawl.data.CellType;
 import com.codecool.dungeoncrawl.data.GameMap;
+import com.codecool.dungeoncrawl.data.items.Helmet;
+import com.codecool.dungeoncrawl.data.items.Potion;
 import com.codecool.dungeoncrawl.data.items.Sword;
 import com.codecool.dungeoncrawl.data.*;
 import com.codecool.dungeoncrawl.data.actors.Player;
@@ -20,7 +22,7 @@ import java.util.Scanner;
 
 public class MapLoader {
 
-    private static List<String> maps = List.of("/map.txt", "/level2.txt");
+    private static List<String> maps = List.of("/map.txt", "/level2.txt", "/gameover.txt");
 
     private static HashMap<String, Key> createKeys() {
         HashMap<String, Key> keyMap = new HashMap<>();
@@ -84,6 +86,14 @@ public class MapLoader {
                             cell.setType(CellType.FLOOR);
                             new Sword(cell);
                             break;
+                        case 'p':
+                            cell.setType(CellType.FLOOR);
+                            new Potion(cell);
+                            break;
+                        case 'h':
+                            cell.setType(CellType.FLOOR);
+                            new Helmet(cell);
+                            break;
                         case '.':
                             cell.setType(CellType.FLOOR);
                             break;
@@ -124,6 +134,27 @@ public class MapLoader {
                         case 'q':
                             cell.setType(CellType.DOOR);
                             new ClosedStairs(cell, keys.get("Key2"), LEVEL.values()[level]);
+                            break;
+                        case 'G':
+                            cell.setType(CellType.G);
+                            break;
+                        case 'A':
+                            cell.setType(CellType.A);
+                            break;
+                        case 'M':
+                            cell.setType(CellType.M);
+                            break;
+                        case 'E':
+                            cell.setType(CellType.E);
+                            break;
+                        case 'y':
+                            cell.setType(CellType.O);
+                            break;
+                        case 'R':
+                            cell.setType(CellType.R);
+                            break;
+                        case 'V':
+                            cell.setType(CellType.V);
                             break;
                         case '2':
                             cell.setType(CellType.FLOOR);

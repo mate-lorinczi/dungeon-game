@@ -32,12 +32,19 @@ public class GameLogic {
                 if(currentCell.getType().equals(CellType.STAIRS) && currentCell.getActor() != null) {
                     updateMap(currentCell.getItem().getLevel().getLevelNum());
                 }
-                if (map.getCell(x, y).getActor() instanceof Monster monster) {
-                    movementPerformer.performMovement(monster, map);
+                if(currentCell.getActor() != null){
+                    if (map.getCell(x, y).getActor() instanceof Monster monster) {
+                        movementPerformer.performMovement(monster, map);
+                    }
+                    else if (currentCell.getActor().getHealth() <=0){
+                        updateMap(2);
+                    }
                 }
+
             }
         }
     }
+
 
     private void updateMap(int level) {
         map = MapLoader.loadMap(level);

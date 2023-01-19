@@ -1,13 +1,13 @@
 25 20
 #############    wwwwwwww
-#ff.......ff#    we.oo.ew
+#ff.......ff#    wehoo.ew
 #f..s...s..f###  w......w
 #....rr......l.# w...v..w
 #....rr.....##l.#we....ew
 #.....s.....# #l.w......w
 #f.........f#  #ld.....vw
-#ff.......ff#   #w......w
-####abba####     we....ew
+#ff.......ff#   #w..p...w
+####abba#####    we....ew
     cbbc         www.wwww
     cbbc           xmx
     cbbc           xmx
@@ -15,7 +15,7 @@
  tggg@ggggt      xxxmxxx
  tggggggigt      x.....x
  tggttttggt      x.O...x
- tggttttg2t      x.....x
- tgvggggggt      x.....x
- tqggggggkt      xxxxxxx
+ tggttttg2t      x..p..x
+ tgvggggggt      xq....x
+ tgggggggkt      xxxxxxx
  tttttttttt
