@@ -34,6 +34,8 @@ public class Player extends Actor {
             nextCell.getActor().damage(getStrength());
         }
         super.move(dx, dy);
+
+        items.forEach(System.out::println);
     }
 
     public boolean checkInventory(Item item) {
