@@ -6,12 +6,18 @@ import com.codecool.dungeoncrawl.data.GameMap;
 import com.codecool.dungeoncrawl.data.actors.Monster;
 import com.codecool.dungeoncrawl.logic.aiMovement.MovementPerformer;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GameLogic {
     private GameMap map;
+    private List<GameMap> maps;
     private MovementPerformer movementPerformer =  new MovementPerformer();
 
     public GameLogic() {
         this.map = MapLoader.loadMap(0);
+        this.maps = new ArrayList<>();
+        this.maps.add(map);
     }
 
     public double getMapWidth() {
@@ -30,7 +36,7 @@ public class GameLogic {
             for (int x = 0; x < map.getWidth(); x++) {
                 Cell currentCell = map.getCell(x,y);
                 if(currentCell.getType().equals(CellType.STAIRS) && currentCell.getActor() != null) {
-                    updateMap(currentCell.getItem().getLevel().getLevelNum());
+                    updateMap(currentCell.getItem().getLevel());
                 }
                 if (map.getCell(x, y).getActor() instanceof Monster monster) {
                     movementPerformer.performMovement(monster, map);
@@ -40,7 +46,8 @@ public class GameLogic {
     }
 
     private void updateMap(int level) {
-        map = MapLoader.loadMap(level);
+        maps.add(MapLoader.loadMap(level));
+        map = maps.get(level);
     }
 
     public Cell getCell(int x, int y) {

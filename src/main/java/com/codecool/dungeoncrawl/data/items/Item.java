@@ -8,7 +8,7 @@ import com.codecool.dungeoncrawl.data.doors.LEVEL;
 public abstract class Item implements Drawable {
 
     private Cell cell;
-    private LEVEL level;
+    private int level;
 
     public Item() {
         this.cell = null;
@@ -19,7 +19,7 @@ public abstract class Item implements Drawable {
         this.cell.setItem(this);
     }
 
-    public Item(Cell cell, LEVEL level) {
+    public Item(Cell cell, int level) {
         this.cell = cell;
         this.cell.setItem(this);
         this.level = level;
@@ -34,7 +34,7 @@ public abstract class Item implements Drawable {
         this.cell = cell;
     }
 
-    public LEVEL getLevel() {
+    public int getLevel() {
         return this.level;
     }
 }

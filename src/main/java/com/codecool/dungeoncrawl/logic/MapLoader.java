@@ -127,7 +127,12 @@ public class MapLoader {
                             break;
                         case 'q':
                             cell.setType(CellType.DOOR);
-                            new ClosedStairs(cell, keys.get("Key2"), LEVEL.values()[level]);
+                            new ClosedStairs(cell, keys.get("Key2"), level + 1);
+                            break;
+                        case 'Q':
+                            cell.setType(CellType.STAIRS);
+                            cell.setItem(new ClosedStairs(cell, keys.get("key2"),
+                                   level - 1));
                             break;
                         case '2':
                             cell.setType(CellType.FLOOR);

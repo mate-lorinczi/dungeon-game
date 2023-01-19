@@ -9,7 +9,7 @@ import com.codecool.dungeoncrawl.data.items.Key;
 public class ClosedStairs extends Item {
     private Key key;
 
-    public ClosedStairs(Cell cell, Key key, LEVEL level) {
+    public ClosedStairs(Cell cell, Key key, int level) {
         super(cell, level);
         this.key = key;
     }
