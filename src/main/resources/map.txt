@@ -15,7 +15,7 @@
  tggg@ggggt      xxxmxxx
  tggggggigt      x.....x
  tggttttggt      x.O...x
- tggttttg2t      x.....x
- tgvggggggt      x.....x
+ tggttttgtt      x.....x
+ tgvggggggt      x...2.x
  tqggggggkt      xxxxxxx
  tttttttttt
