@@ -28,6 +28,7 @@ public class MapLoader {
         keyMap.put("Key2", new Key());
         return keyMap;
     }
+
     public static GameMap loadMap(int level) {
         HashMap<String, Key> keys = createKeys();
         InputStream is = MapLoader.class.getResourceAsStream(maps.get(level));
@@ -81,7 +82,7 @@ public class MapLoader {
                             cell.setType(CellType.TREE);
                             break;
                         case 'i':
-                            cell.setType(CellType.FLOOR);
+                            cell.setType(CellType.GRASS);
                             new Sword(cell);
                             break;
                         case '.':
@@ -141,3 +142,4 @@ public class MapLoader {
     }
 
 }
+

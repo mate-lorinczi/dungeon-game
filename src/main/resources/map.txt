@@ -13,9 +13,9 @@
     cbbc           xmx
  tttcbbcttt        xmx
  tggg@ggggt      xxxmxxx
- tggggggigt      x.....x
+ tggggggigt      xf...fx
  tggttttggt      x.O...x
- tggttttg2t      x.....x
- tgvggggggt      x.....x
+ tggttttggt      x.....x
+ tgvggggggt      xf.2.fx
  tqggggggkt      xxxxxxx
  tttttttttt
