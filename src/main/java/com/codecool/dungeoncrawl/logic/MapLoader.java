@@ -5,6 +5,8 @@ import com.codecool.dungeoncrawl.data.CellType;
 import com.codecool.dungeoncrawl.data.GameMap;
 import com.codecool.dungeoncrawl.data.actors.ToiletMonster;
 import com.codecool.dungeoncrawl.data.doors.SecretDoor;
+import com.codecool.dungeoncrawl.data.items.Helmet;
+import com.codecool.dungeoncrawl.data.items.Potion;
 import com.codecool.dungeoncrawl.data.items.Sword;
 import com.codecool.dungeoncrawl.data.*;
 import com.codecool.dungeoncrawl.data.actors.Player;
@@ -22,7 +24,9 @@ import java.util.Scanner;
 
 public class MapLoader {
 
-    private static List<String> maps = List.of("/map.txt", "/level2.txt", "/secretLevel.txt");
+
+    private static List<String> maps = List.of("/map.txt", "/level2.txt", "/secretLevel.txt",
+            "gameover.txt");
     private static Player player = new Player();
 
     private static HashMap<String, Key> createKeys() {
@@ -88,6 +92,14 @@ public class MapLoader {
                             cell.setType(CellType.GRASS);
                             new Sword(cell);
                             break;
+                        case 'p':
+                            cell.setType(CellType.FLOOR);
+                            new Potion(cell);
+                            break;
+                        case 'h':
+                            cell.setType(CellType.FLOOR);
+                            new Helmet(cell);
+                            break;
                         case '.':
                             cell.setType(CellType.FLOOR);
                             break;
@@ -129,6 +141,28 @@ public class MapLoader {
                             break;
                         case 'q':
                             cell.setType(CellType.DOOR);
+                            new ClosedStairs(cell, keys.get("Key2"), level + 1);
+                            break;
+                        case 'G':
+                            cell.setType(CellType.G);
+                            break;
+                        case 'A':
+                            cell.setType(CellType.A);
+                            break;
+                        case 'M':
+                            cell.setType(CellType.M);
+                            break;
+                        case 'E':
+                            cell.setType(CellType.E);
+                            break;
+                        case 'y':
+                            cell.setType(CellType.O);
+                            break;
+                        case 'R':
+                            cell.setType(CellType.R);
+                            break;
+                        case 'V':
+                            cell.setType(CellType.V);
                             new ClosedStairs(cell, keys.get("Key2"), level + 1);
                             break;
                         case 'Q':

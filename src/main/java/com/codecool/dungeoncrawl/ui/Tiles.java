@@ -50,6 +50,15 @@ public class Tiles {
         tileMap.put("stairs", new Tile(8, 2));
         tileMap.put("toilet", new Tile(12, 10));
         tileMap.put("secret door", new Tile(2,19));
+        tileMap.put("potion", new Tile(18, 25));
+        tileMap.put("helmet", new Tile(1, 22));
+        tileMap.put("g", new Tile(25,30));
+        tileMap.put("a", new Tile(19,30));
+        tileMap.put("m", new Tile(31,30));
+        tileMap.put("e", new Tile(23,30));
+        tileMap.put("o", new Tile(20,31));
+        tileMap.put("v", new Tile(27,31));
+        tileMap.put("r", new Tile(23,31));
     }
 
     public static void drawTile(GraphicsContext context, Drawable d, int x, int y) {

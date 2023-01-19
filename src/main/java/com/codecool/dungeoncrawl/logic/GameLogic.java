@@ -41,12 +41,19 @@ public class GameLogic {
                     currentCell.getNeighbor(2, -1).setActor(map.getPlayer());
                     return;
                 }
-                if (map.getCell(x, y).getActor() instanceof Monster monster) {
-                    movementPerformer.performMovement(monster, map);
+                if(currentCell.getActor() != null){
+                    if (map.getCell(x, y).getActor() instanceof Monster monster) {
+                        movementPerformer.performMovement(monster, map);
+                    }
+                    else if (currentCell.getActor().getHealth() <=0){
+                        updateMap(3);
+                    }
                 }
+
             }
         }
     }
+
 
     private void updateMap(int level) {
         System.out.println(level);
