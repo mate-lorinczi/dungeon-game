@@ -101,11 +101,11 @@ public class MapLoader {
                             break;
                         case 's':
                             cell.setType(CellType.FLOOR);
-                            new Skeleton(cell, MovementTypes.Random);
+                            new Skeleton(cell, MovementTypes.Random, 15);
                             break;
                         case 'O':
                             cell.setType(CellType.FLOOR);
-                            new Ogre(cell);
+                            new Ogre(cell, MovementTypes.Stupid, 30);
                             break;
                         case '@':
                             cell.setType(CellType.GRASS);

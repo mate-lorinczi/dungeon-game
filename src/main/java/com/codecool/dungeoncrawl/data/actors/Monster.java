@@ -5,9 +5,10 @@ import com.codecool.dungeoncrawl.data.MovementTypes;
 
 public abstract class Monster extends Actor {
 
-    public Monster(Cell cell, MovementTypes movementType) {
+    public Monster(Cell cell, MovementTypes movementType, int Health) {
         super(cell);
         super.setMovementType(movementType);
+        super.setHealth(Health);
     }
 
     public MovementTypes getMovementType() {
